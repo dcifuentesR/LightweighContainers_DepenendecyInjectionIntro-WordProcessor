@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.pdsw.sampleprj.dao;
-
-import edu.eci.pdsw.samples.entities.TipoItem;
+package edu.eci.pdsw.samples.persistence;
 
 /**
  *
  * @author hcadavid
  */
-public interface TipoItemDAO {
+public interface PersistenceHandler {
     
-    public TipoItem load(int id) throws PersistenceException;
+    public void save(String content, String fileName);
+    
+    public String load(String fileName);
     
 }

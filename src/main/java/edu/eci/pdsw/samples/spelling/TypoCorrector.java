@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.pdsw.sampleprj.dao;
-
-import edu.eci.pdsw.samples.entities.Item;
+package edu.eci.pdsw.samples.spelling;
 
 /**
  *
  * @author hcadavid
  */
-public interface ItemDAO {
-
-    public void save(Item it) throws PersistenceException;
+public interface TypoCorrector {
     
-    public Item load(int id) throws PersistenceException;
+    public String fixWord(String w);
     
 }

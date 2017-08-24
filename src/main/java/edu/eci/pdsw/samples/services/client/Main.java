@@ -6,7 +6,8 @@
 package edu.eci.pdsw.samples.services.client;
 
 import edu.eci.pdsw.samples.services.ExcepcionServiciosAlquiler;
-import edu.eci.pdsw.samples.services.ServiciosAlquilerFactory;
+import edu.eci.pdsw.samples.services.WordProcessorServicesFactory;
+import edu.eci.pdsw.samples.services.WordProcessorServices;
 
 /**
  *
@@ -15,7 +16,8 @@ import edu.eci.pdsw.samples.services.ServiciosAlquilerFactory;
 public class Main {
 
     public static void main(String a[]) throws ExcepcionServiciosAlquiler{
-        System.out.println(ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarItem(2));
+        WordProcessorServices wps=WordProcessorServicesFactory.getInstance().getServiciosAlquiler();
+        wps.useWordProcessor();        
     }
     
 }
