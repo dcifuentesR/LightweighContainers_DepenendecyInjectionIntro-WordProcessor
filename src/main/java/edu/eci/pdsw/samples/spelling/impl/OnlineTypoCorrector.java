@@ -20,6 +20,7 @@ public class OnlineTypoCorrector implements TypoCorrector {
         LOG.log(Level.INFO, "Checking word {0} based on CLOUD DATA", w);
         return w;
     }
+
     private static final Logger LOG = Logger.getLogger(OnlineTypoCorrector.class.getName());
 
 }

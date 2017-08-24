@@ -14,9 +14,18 @@ import java.util.logging.Logger;
  */
 public class PlainPersistenceHandler implements PersistenceHandler{
 
+    UTF8EncodingValidator encodingValidator=new UTF8EncodingValidator();
+    
     @Override
     public void save(String content, String fileName) {
-        LOG.info("Saving "+fileName+" in PLAIN TEXT");
+        
+        if (encodingValidator.validateRequiredEncoding(content)){
+            LOG.info("Saving "+fileName+" in PLAIN TEXT");
+        }
+        else{
+            LOG.info("Unable to Save "+fileName+" in PLAIN TEXT. Check your document encoding!");
+        }        
+        
     }
     private static final Logger LOG = Logger.getLogger(PlainPersistenceHandler.class.getName());
 
