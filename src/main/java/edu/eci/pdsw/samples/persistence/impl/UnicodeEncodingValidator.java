@@ -7,11 +7,13 @@ package edu.eci.pdsw.samples.persistence.impl;
 
 import java.util.logging.Logger;
 
+import edu.eci.pdsw.samples.persistence.EncodingValidator;
+
 /**
  *
  * @author hcadavid
  */
-public class UnicodeEncodingValidator{
+public class UnicodeEncodingValidator implements EncodingValidator{
 
 
     public boolean validateEncoding(String text) {

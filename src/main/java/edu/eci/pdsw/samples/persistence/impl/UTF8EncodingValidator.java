@@ -8,13 +8,15 @@ package edu.eci.pdsw.samples.persistence.impl;
 import java.util.Random;
 import java.util.logging.Logger;
 
+import edu.eci.pdsw.samples.persistence.EncodingValidator;
+
 /**
  *
  * @author hcadavid
  */
-public class UTF8EncodingValidator{
+public class UTF8EncodingValidator implements EncodingValidator{
 
-    public boolean validateRequiredEncoding(String text) {
+    public boolean validateEncoding(String text) {
         LOG.info("Validating UTF8-Enconding for text....");
         return new Random(System.currentTimeMillis()).nextBoolean();        
     }

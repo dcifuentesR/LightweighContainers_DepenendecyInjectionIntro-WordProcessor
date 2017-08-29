@@ -5,8 +5,11 @@
  */
 package edu.eci.pdsw.samples.persistence.impl;
 
+import edu.eci.pdsw.samples.persistence.EncodingValidator;
 import edu.eci.pdsw.samples.persistence.PersistenceHandler;
 import java.util.logging.Logger;
+
+import com.google.inject.Inject;
 
 /**
  *
@@ -14,12 +17,13 @@ import java.util.logging.Logger;
  */
 public class PlainPersistenceHandler implements PersistenceHandler{
 
-    UTF8EncodingValidator encodingValidator=new UTF8EncodingValidator();
+    @Inject
+    private EncodingValidator encodingValidator;
     
     @Override
     public void save(String content, String fileName) {
         
-        if (encodingValidator.validateRequiredEncoding(content)){
+        if (encodingValidator.validateEncoding(content)){
             LOG.info("Saving "+fileName+" in PLAIN TEXT");
         }
         else{
